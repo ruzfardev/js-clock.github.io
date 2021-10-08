@@ -1,0 +1,265 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  @media only screen and (max-width: 75em) {
+    font-size: 56.5%;
+  }
+  @media only screen and (max-width: 56.25em) {
+    font-size: 50%;
+  }
+  @media only screen and (max-width: 37.5em) {
+    font-size: 37.5%;
+  }
+}
+
+body {
+  position: relative;
+  background: #183a3f;
+  font-family: "Michroma", sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 0;
+  @media only screen and (max-width: 37.5em) {
+    justify-content: space-around;
+  }
+}
+
+.container-clock {
+  width: 50rem;
+  height: 50rem;
+  position: relative;
+  text-align: center;
+  border-radius: 50%;
+  background: #183a3f;
+  box-shadow: inset 10px 10px 10px #122b2f, inset -10px -10px 10px #1e494f;
+
+  @media only screen and (max-width: 37.5em) {
+    width: 60vw;
+    height: 35vh;
+    font-size: 1.4rem;
+  }
+}
+
+.date {
+  box-shadow: inset 4px 4px 4px #1a2630, inset -4px -4px 4px #30485c;
+  width: 10rem;
+  height: 3rem;
+  color: #bebebe;
+  border-radius: 10px;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  @media only screen and (max-width: 37.5em) {
+    box-shadow: inset 2px 2px 2px #1a2630, inset -2px -2px 2px #30485c;
+
+    width: 7rem;
+    height: 2.5rem;
+    font-size: 1.4rem;
+  }
+}
+
+.num {
+  font-size: 4.5rem;
+  color: rgb(175, 172, 172);
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  @media only screen and (max-width: 37.5em) {
+    font-size: 2.5rem;
+    padding: 1.5rem;
+  }
+  &-one {
+    transform: rotate(30deg);
+  }
+  &-sec {
+    transform: rotate(60deg);
+  }
+  &-three {
+    transform: rotate(90deg);
+  }
+  &-four {
+    transform: rotate(120deg);
+  }
+  &-five {
+    transform: rotate(150deg);
+  }
+  &-six {
+    transform: rotate(180deg);
+  }
+  &-seven {
+    transform: rotate(210deg);
+  }
+  &-eight {
+    transform: rotate(240deg);
+  }
+  &-nine {
+    transform: rotate(270deg);
+  }
+  &-ten {
+    transform: rotate(300deg);
+  }
+  &-eleven {
+    transform: rotate(330deg);
+  }
+  & span {
+    display: inline-block;
+    text-align: center;
+  }
+  &-1 {
+    position: absolute;
+    transform: translateX(-50%) rotate(-30deg);
+  }
+  &-2 {
+    position: absolute;
+    transform: translateX(-50%) rotate(-60deg);
+  }
+  &-3 {
+    position: absolute;
+    transform: translateX(-50%) rotate(-90deg);
+  }
+  &-4 {
+    position: absolute;
+    transform: translateX(-50%) rotate(-120deg);
+  }
+  &-5 {
+    position: absolute;
+    transform: translateX(-50%) rotate(-150deg);
+  }
+  &-6 {
+    position: absolute;
+    transform: translateX(-50%) rotate(-180deg);
+  }
+  &-7 {
+    position: absolute;
+    transform: translateX(-50%) rotate(-210deg);
+  }
+  &-8 {
+    position: absolute;
+    transform: translateX(-50%) rotate(-240deg);
+  }
+  &-9 {
+    position: absolute;
+    transform: translateX(-50%) rotate(-270deg);
+  }
+  &-10 {
+    position: absolute;
+    transform: translateX(-50%) rotate(-300deg);
+  }
+  &-11 {
+    position: absolute;
+    transform: translateX(-50%) rotate(-330deg);
+  }
+}
+.container-hand {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  & .hand {
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+  }
+}
+
+.sec {
+  width: 0.4rem;
+  height: 46%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: #ff0000;
+  z-index: 10;
+}
+.min {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 0.7rem;
+  height: 42%;
+  background-color: #bebebe;
+}
+.hour {
+  width: 0.7rem;
+  height: 34%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #bebebe;
+}
+.dot {
+  background-color: #bebebe;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  z-index: 11;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @media only screen and (max-width: 37.5em) {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+// Digital clock
+.digital {
+  width: 50rem;
+  height: 15rem;
+  display: flex;
+  align-items: center;
+  font-size: 6.4rem;
+  color: #bebebe;
+  border-radius: 25px;
+  background: #183a3f;
+  box-shadow: inset 10px 10px 10px #122b2f, inset -10px -10px 10px #1e494f;
+  &-hour {
+    flex: 1;
+    text-align: center;
+  }
+  &-min {
+    flex: 1;
+    text-align: center;
+  }
+  &-sec {
+    flex: 1;
+    text-align: center;
+  }
+}
+.colon {
+  animation: colonDot 800ms infinite;
+  animation-direction: alternate-reverse;
+}
+@keyframes colonDot {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.legal {
+  letter-spacing: 2px;
+  color: #bebebe;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
